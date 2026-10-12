@@ -2,9 +2,9 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define BASE 0
-#define NAV  1
-#define SYM  2
-#define ADJ  3
+#define NUM  1
+#define NAV  2
+#define META 3
 
 / {
     conditional_layers { compatible = "zmk,conditional-layers"; };
@@ -12,31 +12,43 @@
     keymap {
         compatible = "zmk,keymap";
 
-        base {
-            display-name = "base";
+        BASE {
+            display-name = "BASE";
             bindings = <
-&kp GRAVE  &kp Q  &kp W  &kp F  &kp P  &kp B  &kp J  &kp L  &kp U  &kp Y  &kp SEMICOLON  &kp SQT  &kp MINUS  &mt LEFT_GUI A  &mt LEFT_ALT R  &mt LEFT_CONTROL S  &mt LEFT_SHIFT T  &kp G  &kp M  &mt RIGHT_SHIFT N  &mt RIGHT_CONTROL E  &mt LEFT_ALT I  &mt RIGHT_GUI O  &kp EQUAL  &kp LEFT_BRACKET  &kp Z  &kp X  &kp C  &kp D  &kp V  &kp K  &kp H  &kp COMMA  &kp PERIOD  &kp SLASH  &kp RIGHT_BRACKET  &kp TAB  &lt 1 SPACE  &kp ESCAPE  &kp RET  &lt 2 SPACE  &kp BACKSPACE
+              &kp GRAVE        &kp Q          &kp W          &kp F              &kp P            &kp B           &kp J   &kp L             &kp U               &kp Y          &kp SEMICOLON   &kp SQT
+              &kp MINUS        &mt LEFT_GUI A &mt LEFT_ALT R &mt LEFT_CONTROL S &mt LEFT_SHIFT T &kp G           &kp M   &mt RIGHT_SHIFT N &mt RIGHT_CONTROL E &mt LEFT_ALT I &mt RIGHT_GUI O &kp EQUAL
+              &kp LEFT_BRACKET &kp Z          &kp X          &kp C              &kp D            &kp V           &kp K   &kp H             &kp COMMA           &kp PERIOD     &kp SLASH       &kp RIGHT_BRACKET
+                                                             &kp TAB            &lt 1 SPACE      &kp ESCAPE      &kp RET &lt 2 SPACE       &kp BACKSPACE
             >;
         };
 
-        num {
-            display-name = "num";
+        NUM {
+            display-name = "NUM";
             bindings = <
-&kp TILDE  &kp CARET  &kp N1  &kp N2  &kp N3  &kp DOLLAR  &kp AT_SIGN  &kp AMPERSAND  &kp LPAR  &kp RPAR  &kp COLON  &kp DOUBLE_QUOTES  &kp UNDERSCORE  &kp N0  &kp N4  &kp N5  &kp N6  &kp PERCENT  &kp EXCLAMATION  &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI  &kp PLUS  &kp LEFT_BRACE  &kp HASH  &kp N7  &kp N8  &kp N9  &kp ASTERISK  &kp BACKSLASH  &kp PIPE  &kp LESS_THAN  &kp GREATER_THAN  &kp QUESTION  &kp RIGHT_BRACE  &trans  &trans  &trans  &trans  &trans  &trans
+              &kp TILDE      &kp CARET &kp N1 &kp N2 &kp N3 &kp DOLLAR        &kp AT_SIGN     &kp AMPERSAND &kp LPAR      &kp RPAR          &kp COLON    &kp DOUBLE_QUOTES
+              &kp UNDERSCORE &kp N0    &kp N4 &kp N5 &kp N6 &kp PERCENT       &kp EXCLAMATION &kp RSHFT     &kp RCTRL     &kp LALT          &kp RGUI     &kp PLUS
+              &kp LEFT_BRACE &kp HASH  &kp N7 &kp N8 &kp N9 &kp ASTERISK      &kp BACKSLASH   &kp PIPE      &kp LESS_THAN &kp GREATER_THAN  &kp QUESTION &kp RIGHT_BRACE
+                                              &trans &trans &trans            &trans          &trans        &trans
             >;
         };
 
-        nav {
-            display-name = "nav";
+        NAV {
+            display-name = "NAV";
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp DEL  &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END  &kp INS  &kp KP_NUMLOCK  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp CAPS  &caps_word  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp PRINTSCREEN  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &kp K_MUTE  &kp K_PREV  &kp K_VOLUME_DOWN  &kp K_VOL_UP  &kp K_NEXT  &kp K_PLAY_PAUSE  &trans  &trans  &trans  &trans  &trans  &trans
+              &kp F1         &kp F2   &kp F3   &kp F4    &kp F5    &kp F6        &kp DEL    &kp HOME       &kp PAGE_DOWN     &kp PAGE_UP  &kp END         &kp INS
+              &kp KP_NUMLOCK &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &kp CAPS      &caps_word &kp LEFT_ARROW &kp DOWN_ARROW    &kp UP_ARROW &kp RIGHT_ARROW &kp PRINTSCREEN
+              &kp F7         &kp F8   &kp F9   &kp F10   &kp F11   &kp F12       &kp K_MUTE &kp K_PREV     &kp K_VOLUME_DOWN &kp K_VOL_UP &kp K_NEXT      &kp K_PLAY_PAUSE
+                                               &trans    &trans    &trans        &trans     &trans         &trans
             >;
         };
 
-        meta {
-            display-name = "meta";
+        META {
+            display-name = "META";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+              &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+              &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+              &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+                                      &trans  &trans  &trans      &trans  &trans  &trans
             >;
         };
     };

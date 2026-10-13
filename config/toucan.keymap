@@ -6,6 +6,16 @@
 #define NAV  2
 #define META 3
 
+&mt {
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+};
+
+&lt {
+  flavor = "balanced";
+  tapping-term-ms = <200>;
+};
+
 / {
     conditional_layers { compatible = "zmk,conditional-layers"; };
 
